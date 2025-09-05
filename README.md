@@ -9,7 +9,7 @@ A Tampermonkey user script that adds package install commands for pnpm/bun/yarn 
 1. Install the script from [here](./add-more-install-commands.js).
 2. Add the script follow the Tampermonkey guide.
 3. Refresh the NPM repository package page.
-4. You should see the install commands for pnpm/bun/yarn.
+4. You should see the install commands for `pnpm`/`bun`/`yarn`.
 
 ## License
 
