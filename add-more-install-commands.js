@@ -113,6 +113,26 @@
     });
   };
 
+  const createInstallCommandElement = (nextElement, commandText, packageName) => {
+    const clonedNextElement = nextElement.cloneNode(true);
+    const clonedNextCodeElement = clonedNextElement.querySelector('code');
+    if (clonedNextCodeElement) {
+      clonedNextCodeElement.textContent = commandText;
+    }
+
+    const button = clonedNextElement.querySelector('button');
+    if (button) {
+      button.addEventListener('click', () => {
+        navigator.clipboard
+          .writeText(commandText)
+          .then(() => showToast(`${packageName} install command copied!`))
+          .catch(() => showToast(`${packageName} install command copy failed`));
+      });
+    }
+
+    return clonedNextElement;
+  };
+
   waitForElement('Install', { exact: true })
     .then((el) => {
       const nextElement = el.nextElementSibling;
@@ -140,29 +160,16 @@
         'pnpm add <>',
       ].forEach((command) => {
         const commandText = `${command.replace('<>', packageName)}`;
-
-        const clonedNextElement = nextElement.cloneNode(true);
-        const clonedNextCodeElement = clonedNextElement.querySelector('code');
-        if (clonedNextCodeElement) {
-          clonedNextCodeElement.textContent = commandText;
-        }
-
-        const button = clonedNextElement.querySelector('button');
-        if (button) {
-          button.addEventListener('click', () => {
-            navigator.clipboard
-              .writeText(commandText)
-              .then(() => {
-                showToast(`${packageName} install command copied!`);
-              })
-              .catch(() => {
-                showToast(`${packageName} install command copy failed`);
-              });
-          });
-        }
-
-        el.parentNode.insertBefore(clonedNextElement, el.nextSibling);
+        el.parentNode.insertBefore(
+          createInstallCommandElement(nextElement, commandText, packageName),
+          el.nextSibling
+        );
       });
+
+      nextElement.parentNode.insertBefore(
+        createInstallCommandElement(nextElement, `npm i ${packageName} -D`, packageName),
+        nextElement.nextSibling
+      );
     })
     .catch(console.error);
 })();
