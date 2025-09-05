@@ -2,7 +2,7 @@
 // @name               Add More Install Commands On NPM Package Page
 // @name:zh-CN         在 NPM 包页面添加更多安装命令
 // @namespace          tinywaves
-// @version            0.0.1
+// @version            0.0.2
 // @description        Enhances NPM package pages by adding multiple package manager install commands (yarn, pnpm, bun) alongside the default npm command. Supports both regular and dev dependencies with one-click copy functionality.
 // @description:zh-CN  在 NPM 包页面添加多个包管理器安装命令（yarn、pnpm、bun）。支持常规依赖和开发依赖，提供一键复制功能。
 // @author             tinywaves · https://github.com/tinywaves
