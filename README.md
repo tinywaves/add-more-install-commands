@@ -2,6 +2,8 @@
 
 A Tampermonkey user script that adds package install commands for pnpm/bun/yarn on NPM repository page.
 
+![image](./screenshot.png)
+
 ## Installation and Usage
 
 1. Install the script from [here](./add-more-install-commands.js).
