@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         NPM commands enhance
+// @name         NPM Package Install Commands Enhancer
 // @namespace    tinywaves
 // @version      0.0.1
-// @description  The NPM repository only show npm install command, this script will show yarn, pnpm and bun install command
+// @description  Enhances NPM package pages by adding multiple package manager install commands (yarn, pnpm, bun) alongside the default npm command. Supports both regular and dev dependencies with one-click copy functionality.
 // @author       tinywaves · https://github.com/tinywaves
 // @match        https://www.npmjs.com/package/*
 // @icon         https://static-production.npmjs.com/1996fcfdf7ca81ea795f67f093d7f449.png
